@@ -27,13 +27,19 @@ function App() {
     );
   }
 
+  function handleClearAll() {
+      setItems([]);
+  }
+
 
   return (
     <div className="app">
       <Logo />
-      <Form onAddItem={handleAddItem} />
+      <Form onAddItem={handleAddItem} /> 
       <PackingList items={items} onDeleteItem={handleDeleteItem} onUpdateItem={handleUpdateItem} />
+      <button onClick={handleClearAll}>Clear All</button>
       <Stats items={items} />
+      
     </div>
   );
 }
